@@ -1,3 +1,27 @@
-h1 {
-    color: blue;
+html {
+    scroll-behavior: smooth;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+a {
+    display: inline-block;
+    text-decoration: none;
+}
+
+body {
+    background-image: linear-gradient(to right, var(--light-purple), var(--dark-purple));
+}
+
+.app {
+    padding-inline: 15px;
+    margin-inline: auto;
+    width: 95vw;
+    height: 95dvh;
+    border-radius: 8px;
+    background-color: var(--black);
+    color: var(--off-white);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4), 0 2px 4px rgba(0, 0, 0, 0.2);
 }
