@@ -1,15 +1,75 @@
-@forward 'globals';
-@forward 'variables';
-@forward 'typography';
-@forward 'mixins';
+@forward "globals";
+@forward "variables";
+@forward "typography";
+@forward "mixins";
 
 .app {
-    padding-inline: 15px;
-    margin-inline: auto;
-    width: 95vw;
-    height: 95dvh;
-    border-radius: 10px;
-    background-color: var(--black);
-    color: var(--off-white);
-    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.5);
+  margin-inline: auto;
+  width: 95vw;
+  height: 95dvh;
+  border-radius: 10px;
+  background-color: var(--black);
+  color: var(--off-white);
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.5);
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 30px;
+    background-color: rgb(19, 19, 19);
+    border-radius: 10px 10px 0 0;
+
+    form {
+      position: relative;
+
+      input {
+        width: 100%;
+        padding: 15px 20px;
+        border-radius: 30px;
+        outline: none;
+        border: none;
+        background-color: var(--black);
+        caret-color: var(--gray);
+        color: var(--gray);
+
+        @media (max-width: 768px) {
+          padding: 10px 15px;
+          font-size: 0.7rem;
+        }
+      }
+
+      button {
+        position: absolute;
+        width: 20px;
+        aspect-ratio: 1 / 1;
+        background-color: transparent;
+        top: 50%;
+        right: 15px;
+        translate: 0 -50%;
+        cursor: pointer;
+        outline: none;
+        border: none;
+        color: var(--gray);
+        font-size: 1rem;
+
+        i {
+          transition: var(--main-trans);
+
+          &:hover {
+            color: var(--off-white);
+          }
+        }
+
+        @media (max-width: 768px) {
+          right: 10px;
+          font-size: 0.8rem;
+        }
+      }
+    }
+
+    @media (max-width: 768px) {
+      padding: 12px;
+    }
+  }
 }
