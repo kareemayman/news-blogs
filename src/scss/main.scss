@@ -1,2 +1,15 @@
 @forward 'globals';
 @forward 'variables';
+@forward 'typography';
+@forward 'mixins';
+
+.app {
+    padding-inline: 15px;
+    margin-inline: auto;
+    width: 95vw;
+    height: 95dvh;
+    border-radius: 10px;
+    background-color: var(--black);
+    color: var(--off-white);
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.5);
+}
