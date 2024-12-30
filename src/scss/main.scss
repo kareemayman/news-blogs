@@ -79,8 +79,11 @@
     display: flex;
     gap: 20px;
 
-    & > div:nth-child(3), .flex div {
+    & > div:nth-child(3),
+    .flex > div {
       border-radius: 10px;
+      background-color: rgb(19, 19, 19);
+      padding: 30px;
     }
 
     .flex {
@@ -88,8 +91,9 @@
       gap: 20px;
       flex-direction: column;
 
-      @media (min-width: 769px) and (max-width: 1400px) {
+      @media (min-width: 769px) and (max-width: 1300px) {
         flex-direction: row;
+        flex-basis: 100% !important;
       }
     }
 
@@ -99,8 +103,6 @@
       .blog-profile {
         @include flex-center;
         flex-direction: column;
-        padding: 30px;
-        background-color: rgb(19, 19, 19);
 
         div {
           width: 70px;
@@ -118,11 +120,75 @@
           margin-top: 15px;
         }
       }
+
+      .categories {
+        flex: 1;
+
+        h2 {
+          padding-bottom: 20px;
+        }
+
+        a {
+          display: block;
+          padding: 10px 0;
+          font-family: "Kanit", serif;
+          font-weight: 300;
+          font-style: normal;
+          text-transform: uppercase;
+          color: var(--off-white);
+          font-size: 0.9rem;
+          transition: var(--main-trans);
+          position: relative;
+
+          i:first-child {
+            position: absolute;
+            right: 38px;
+            top: 50%;
+            translate: 0 -50%;
+            z-index: 2;
+            border: 1px solid black;
+          }
+
+          i:last-child {
+            position: absolute;
+            right: 35px;
+            top: 42%;
+            translate: 0 -50%;
+            border: 1px solid black;
+            z-index: 1;
+          }
+
+          &:hover {
+            color: white;
+            text-shadow: 0 0 5px var(--off-white);
+          }
+
+          @media (min-width: 769px) and (max-width: 1300px) {
+            display: inline-block;
+            padding: 10px;
+
+            i:first-child {
+              right: -8px
+            }
+
+            i:last-child {
+              right: -11px;
+            }
+          }
+        }
+
+        @media (min-width: 769px) and (max-width: 1300px) {
+          text-align: center;
+        }
+      }
     }
 
     .flex:nth-child(2) {
       flex-direction: column !important;
     }
 
+    @media (min-width: 769px) and (max-width: 1300px) {
+      flex-direction: column;
+    }
   }
 }
