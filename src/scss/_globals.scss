@@ -1,4 +1,4 @@
-@use 'mixins' as m;
+@import 'mixins';
 
 html {
     scroll-behavior: smooth;
@@ -18,6 +18,6 @@ a {
 body {
     height: 100dvh;
     background-image: linear-gradient(to right, var(--light-purple), var(--dark-purple));
-    @include m.flex-center;
+    @include flex-center;
     font-family: "Kanit", sans-serif;
 }
