@@ -55,10 +55,10 @@
 
         i {
           transition: var(--main-trans);
+        }
 
-          &:hover {
-            color: var(--off-white);
-          }
+        &:hover i {
+          color: var(--off-white);
         }
 
         @media (max-width: 768px) {
@@ -71,5 +71,31 @@
     @media (max-width: 768px) {
       padding: 12px;
     }
+  }
+
+  main {
+    padding: 20px 15px;
+    height: calc(95dvh - 130px);
+    display: flex;
+    gap: 20px;
+
+    & > div:nth-child(3), .flex div {
+      border-radius: 10px;
+    }
+
+    .flex {
+      display: flex;
+      gap: 20px;
+      flex-direction: column;
+
+      @media (min-width: 769px) and (max-width: 1400px) {
+        flex-direction: row;
+      }
+    }
+
+    .flex:nth-child(2) {
+      flex-direction: column !important;
+    }
+
   }
 }
