@@ -1,7 +1,7 @@
-@import "globals";
-@import "variables";
-@import "typography";
-@import "mixins";
+@use "mixins" as *;
+@use "globals";
+@use "variables";
+@use "typography";
 
 .app {
   margin-inline: auto;
@@ -118,6 +118,10 @@
 
         p {
           margin-top: 15px;
+
+          @media (max-width: 768px) {
+            display: none;
+          }
         }
       }
 
@@ -126,6 +130,10 @@
 
         h2 {
           padding-bottom: 20px;
+
+          @media (max-width: 768px) {
+            display: none;
+          }
         }
 
         a {
@@ -163,21 +171,21 @@
             text-shadow: 0 0 5px var(--off-white);
           }
 
-          @media (min-width: 769px) and (max-width: 1300px) {
+          @media (max-width: 1300px) {
             display: inline-block;
-            padding: 10px;
+            padding: 5px;
 
             i:first-child {
-              right: -8px
+              right: -12px
             }
 
             i:last-child {
-              right: -11px;
+              right: -15px;
             }
           }
         }
 
-        @media (min-width: 769px) and (max-width: 1300px) {
+        @media (max-width: 1300px) {
           text-align: center;
         }
       }
@@ -187,7 +195,7 @@
       flex-direction: column !important;
     }
 
-    @media (min-width: 769px) and (max-width: 1300px) {
+    @media  (max-width: 1300px) {
       flex-direction: column;
     }
   }
