@@ -213,6 +213,12 @@
         background-color: var(--black);
       }
 
+      .news-highlight {
+        @media (max-width: 768px) {
+          height: 40%;
+        }
+      }
+
       .news-card {
         position: relative;
         border-bottom-left-radius: 10px;
@@ -272,6 +278,10 @@
               translate: 6px -6px;
               z-index: 1;
             }
+
+            @media (max-width: 768px) {
+              display: none;
+            }
           }
         }
       }
@@ -294,17 +304,19 @@
 
         @media (max-width: 768px) {
           grid-template-columns: repeat(2, 1fr);
+          height: 60%;
         }
       }
 
       @media (max-width: 1300px) {
         width: 100%;
-        min-height: 600px;
+        min-height: 900px;
       }
     }
 
     @media (max-width: 1300px) {
       flex-direction: column;
+      height: calc(95dvh - 80px);
     }
   }
 }
