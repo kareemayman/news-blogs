@@ -259,6 +259,16 @@
       border-bottom-right-radius: 10px;
       height: 100%;
       width: 100%;
+      cursor: pointer;
+
+      &:hover::before {
+        background-color: rgba(0, 0, 0, 0.4);
+      }
+
+      &:hover .title {
+        text-shadow: 0 0 3px var(--off-white);
+        background-color: rgba(0, 0, 0, 1);
+      }
 
       &::before {
         position: absolute;
@@ -269,6 +279,7 @@
         border-radius: 10px;
         left: 0;
         top: 0;
+        transition: 0.6s;
       }
 
       .img {
@@ -289,6 +300,7 @@
       }
 
       .title {
+        transition: 0.6s;
         border-bottom-left-radius: 10px;
         border-bottom-right-radius: 10px;
         position: absolute;
