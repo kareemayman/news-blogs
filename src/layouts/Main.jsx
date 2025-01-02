@@ -3,6 +3,7 @@ import BlogProfile from '../components/BlogProfile'
 import kareem from '../assets/images/kareem.jpg'
 import Categories from '../components/Categories'
 import News from './News'
+import MyBlogs from './MyBlogs'
 
 export default function Main() {
   return (
@@ -17,7 +18,7 @@ export default function Main() {
             <News></News>
         </div>
 
-        <div></div>
+        <MyBlogs></MyBlogs>
 
         <div className="flex">
             <div></div>
