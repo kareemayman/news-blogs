@@ -217,6 +217,12 @@
         @media (max-width: 768px) {
           height: 40%;
         }
+
+        h2 {
+          @media (max-width: 768px) {
+            font-size: 6vw !important;
+          }
+        }
       }
 
       .news-card {
@@ -259,12 +265,13 @@
 
           h2 {
             font-size: var(--news-highlight-font-size);
-            letter-spacing: 0.5px;
+            letter-spacing: 1px;
           }
 
           .bookmark-icon {
             position: relative;
             margin-right: 20px;
+            margin-left: 10px;
             @include flex-center;
 
             i {
@@ -295,10 +302,10 @@
         gap: 10px;
 
         h2 {
-          font-size: calc(var(--news-highlight-font-size) * 0.5) !important;
+          font-size: 1.6vh!important;
 
           @media (max-width: 768px) {
-            font-size: calc(var(--news-highlight-font-size) * 0.8) !important;
+            font-size: calc(var(--news-highlight-font-size) * 1.2) !important;
           }
         }
 
