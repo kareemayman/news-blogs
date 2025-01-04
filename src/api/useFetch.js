@@ -1,4 +1,4 @@
-const GNewsAPIKey = '4bee137bd9c40b85bc115e07878508e7'
+const GNewsAPIKey = import.meta.env.VITE_GNEWS_API_KEY
 const GNewsEndpoint = 'https://gnews.io/api/v4/top-headlines?category=general&lang=en&country=eg&max=7&apikey=' + GNewsAPIKey
 
 import { useEffect, useState } from "react"
