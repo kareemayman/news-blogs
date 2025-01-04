@@ -1,15 +1,11 @@
-import React from "react"
+import React, { useContext } from "react"
 import Card from "../components/Card"
-import { useFetch } from "../api/useFetch"
-
-const GNewsAPIKey = import.meta.env.VITE_GNEWS_API_KEY
-let GNewsEndpoint =
-  "https://gnews.io/api/v4/top-headlines?category=general&lang=en&country=us&max=7&apikey=" +
-  GNewsAPIKey
+import { useFetch } from "../hooks/useFetch"
+import { NewsContext } from "../context/NewsContext"
 
 export default function News() {
-  const { data, loading, error } = useFetch(GNewsEndpoint)
-  console.log(data)
+  const { newsEndpoint } = useContext(NewsContext)
+  const { data, loading, error } = useFetch(newsEndpoint)
 
   return (
     <>

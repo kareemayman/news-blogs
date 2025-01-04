@@ -142,7 +142,7 @@
           }
         }
 
-        a {
+        span {
           display: block;
           padding: 10px 0;
           font-family: "Kanit", serif;
@@ -153,6 +153,7 @@
           font-size: 0.9rem;
           transition: var(--main-trans);
           position: relative;
+          cursor: pointer;
 
           i:first-child {
             position: absolute;
