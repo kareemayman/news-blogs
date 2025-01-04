@@ -234,7 +234,7 @@
         gap: 10px;
 
         h2 {
-          font-size: 1.6vh!important;
+          font-size: 1.6vh !important;
 
           @media (max-width: 768px) {
             font-size: calc(var(--news-highlight-font-size) * 1.2) !important;
@@ -317,6 +317,13 @@
         h2 {
           font-size: var(--news-highlight-font-size);
           letter-spacing: 1px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          line-clamp: 2;
+          -webkit-line-clamp: 2; /* Limit to 2 lines */
+          -webkit-box-orient: vertical;
+          white-space: normal; /* Allow text to wrap */
         }
 
         .bookmark-icon {

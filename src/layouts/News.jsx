@@ -1,12 +1,5 @@
 import React from "react"
 import Card from "../components/Card"
-
-import blog2 from "/src/assets/images/blog2.jpg"
-import health from "/src/assets/images/health.jpg"
-import tech from "/src/assets/images/tech.jpg"
-import science from "/src/assets/images/science.jpg"
-import world from "/src/assets/images/world.jpg"
-import nation from "/src/assets/images/nation.jpg"
 import { useFetch } from "../api/useFetch"
 
 const GNewsAPIKey = import.meta.env.VITE_GNEWS_API_KEY
