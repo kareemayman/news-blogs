@@ -88,7 +88,7 @@
     height: calc(95dvh - 130px);
     display: flex;
     gap: 20px;
-    overflow-y: scroll;
+    overflow-y: hidden;
     scrollbar-width: none; /* For Firefox */
 
     &::-webkit-scrollbar {
@@ -165,6 +165,22 @@
           position: relative;
           cursor: pointer;
 
+          &::before {
+            position: absolute;
+            content: "";
+            background-color: var(--off-white);
+            width: 0;
+            height: 1px;
+            transition: var(--main-trans);
+            left: 0;
+            bottom: 5px;
+            border-radius: 30px;
+          }
+
+          &.category--active::before {
+            width: 25%;
+          }
+
           i:first-child {
             position: absolute;
             right: 38px;
@@ -183,7 +199,8 @@
             z-index: 1;
           }
 
-          &:hover {
+          &:hover,
+          &:hover::before {
             color: white;
             text-shadow: 0 0 5px var(--off-white);
           }
@@ -391,6 +408,7 @@
 
     @media (max-width: 1300px) {
       flex-direction: column;
+      overflow-y: scroll;
       height: calc(95dvh - 80px);
     }
   }
