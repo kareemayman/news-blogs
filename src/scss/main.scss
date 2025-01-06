@@ -175,10 +175,18 @@
             left: 0;
             bottom: 5px;
             border-radius: 30px;
+
+            @media (max-width: 1300px) {
+              left: 5px;
+            }
           }
 
           &.category--active::before {
             width: 25%;
+
+            @media (max-width: 1300px) {
+              width: calc(100% - 10px);
+            }
           }
 
           i:first-child {
