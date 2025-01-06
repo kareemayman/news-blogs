@@ -10,9 +10,16 @@ function Search({ placeholder }) {
   function handleSubmit(event) {
     event.preventDefault()
     console.log("search submitted")
-    setNewsEndpoint(
-      `https://gnews.io/api/v4/search?q="${search}"&lang=en&country=us&max=7&apikey=${GNewsAPIKey}`
-    )
+    if (search.trim() != "") {
+      setNewsEndpoint(
+        `https://gnews.io/api/v4/search?q="${search}"&lang=en&country=us&max=7&apikey=${GNewsAPIKey}`
+      )
+    } else {
+      setNewsEndpoint(
+        "https://gnews.io/api/v4/top-headlines?category=general&lang=en&country=us&max=7&apikey=" +
+          GNewsAPIKey
+      )
+    }
   }
 
   return (
