@@ -49,6 +49,7 @@ function Search({ placeholder }) {
           placeholder={placeholder}
           value={search}
           onChange={(e) => setSearch(e.target.value)}
+          name="search"
         />
         <button type="submit">
           <i className="fa-solid fa-magnifying-glass"></i>

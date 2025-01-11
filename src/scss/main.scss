@@ -187,7 +187,7 @@
 
           &.category--active:hover {
             color: rgb(55, 192, 55);
-            text-shadow: 0 0 5px rgb(42, 184, 42) ;
+            text-shadow: 0 0 5px rgb(42, 184, 42);
           }
 
           // &.category--active::before {
@@ -424,13 +424,6 @@
       }
     }
 
-    & > .flex,
-    & > div:nth-child(3) {
-      @media (max-width: 1300px) {
-        margin-inline: 15px;
-      }
-    }
-
     footer {
       @media (min-width: 1300px) {
         display: none;
@@ -442,6 +435,11 @@
       overflow-y: scroll;
       height: calc(95dvh - 79px);
       padding: 20px 0 0;
+
+      & > .flex,
+      & > div:nth-child(3) {
+        margin-inline: 15px;
+      }
     }
 
     @media (max-width: 769px) {
