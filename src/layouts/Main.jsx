@@ -4,6 +4,7 @@ import kareem from "../assets/images/kareem.jpg"
 import Categories from "../components/Categories"
 import News from "./News"
 import MyBlogs from "./MyBlogs"
+import Footer from "./Footer"
 
 export default function Main() {
   return (
@@ -23,6 +24,8 @@ export default function Main() {
         <div></div>
         <div></div>
       </div>
+      
+      <Footer></Footer>
     </main>
   )
 }
