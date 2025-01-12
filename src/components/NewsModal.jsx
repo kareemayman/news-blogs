@@ -1,7 +1,24 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { format } from "date-fns"
 
-export default function NewsModal({ data, img, title }) {
+export default function NewsModal({ data, img, title, cardModalVisible, changeCardModalVisible }) {
+
+    // Adding Event For Clicks When NewModal Is Visible
+    useEffect(() => {
+      function clickEventListener (e) {
+        if (cardModalVisible) {
+          if (e.target.matches('.news-modal-box .img')) {
+            changeCardModalVisible(false)
+          }
+        }
+      }
+  
+      document.addEventListener('click', clickEventListener)
+  
+      return () => {
+        document.removeEventListener('click', clickEventListener)
+      }
+    }, [])
 
   const formattedDate = format(
     new Date(data.publishedAt),

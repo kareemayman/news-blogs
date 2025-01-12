@@ -9,11 +9,20 @@ function Card({ img, title, bookmark, articleData }) {
     imgRef.current.style.backgroundImage = `url(${img})`
   }, [img])
 
+  // useEffect For showing, hiding overlay
+  useEffect(() => {
+    if (cardModalVisible) {
+      document.body.classList.add('show-overlay')
+    } else {
+      document.body.classList.remove('show-overlay')
+    }
+  }, [cardModalVisible])
+
   return (
     <>
       {cardModalVisible &&
         title != "No News Available For This Search Query!" && (
-          <NewsModal data={articleData} img={img} title={title}></NewsModal>
+          <NewsModal data={articleData} img={img} title={title} cardModalVisible={cardModalVisible} changeCardModalVisible={changeCardModalVisible}></NewsModal>
         )}
       <div
         className="card"
