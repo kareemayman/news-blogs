@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react"
 import NewsModal from "./NewsModal"
 
-function Card({ img, title, bookmark, articleData }) {
+function Card({ img, title, bookmark, articleData, blog }) {
   const imgRef = useRef(null)
   const [cardModalVisible, changeCardModalVisible] = useState(false)
 
@@ -11,10 +11,13 @@ function Card({ img, title, bookmark, articleData }) {
 
   // useEffect For showing, hiding overlay
   useEffect(() => {
-    if (cardModalVisible) {
-      document.body.classList.add('show-overlay')
+    if (
+      cardModalVisible &&
+      title != "No News Available For This Search Query!"
+    ) {
+      document.body.classList.add("show-overlay")
     } else {
-      document.body.classList.remove('show-overlay')
+      document.body.classList.remove("show-overlay")
     }
   }, [cardModalVisible])
 
@@ -22,12 +25,18 @@ function Card({ img, title, bookmark, articleData }) {
     <>
       {cardModalVisible &&
         title != "No News Available For This Search Query!" && (
-          <NewsModal data={articleData} img={img} title={title} cardModalVisible={cardModalVisible} changeCardModalVisible={changeCardModalVisible}></NewsModal>
+          <NewsModal
+            data={articleData}
+            img={img}
+            title={title}
+            cardModalVisible={cardModalVisible}
+            changeCardModalVisible={changeCardModalVisible}
+          ></NewsModal>
         )}
       <div
         className="card"
         onClick={() => {
-          changeCardModalVisible(!cardModalVisible)
+          !blog && changeCardModalVisible(!cardModalVisible)
         }}
       >
         <div className="img" ref={imgRef}>

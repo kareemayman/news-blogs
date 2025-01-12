@@ -3,7 +3,7 @@ import { format } from "date-fns"
 
 export default function NewsModal({ data, img, title, cardModalVisible, changeCardModalVisible }) {
 
-    // Adding Event For Clicks When NewModal Is Visible
+    // Adding Event For Clicks When NewsModal Is Visible
     useEffect(() => {
       function clickEventListener (e) {
         if (cardModalVisible) {

@@ -12,11 +12,11 @@ function MyBlogs() {
     <div className='my-blogs'>
         <h2>my blogs</h2>
         <div className="my-blogs__grid">
-            <Card title="this is my first blog" img={blog1}></Card>
-            <Card title="this is my second blog" img={blog2}></Card>
-            <Card title="this is my third blog" img={blog3}></Card>
-            <Card title="this is my fourth blog" img={blog4}></Card>
-            <Card title="this is my fifth blog" img={tech}></Card>
+            <Card title="this is my first blog" img={blog1} blog={true}></Card>
+            <Card title="this is my second blog" img={blog2} blog={true}></Card>
+            <Card title="this is my third blog" img={blog3} blog={true}></Card>
+            <Card title="this is my fourth blog" img={blog4} blog={true}></Card>
+            <Card title="this is my fifth blog" img={tech} blog={true}></Card>
         </div>
     </div>
   )
