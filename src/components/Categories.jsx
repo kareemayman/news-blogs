@@ -172,8 +172,7 @@ export default function Categories() {
         // }
         onClick={() =>
           setNewsEndpoint(
-            "https://gnews.io/api/v4/top-headlines?category=general&lang=en&country=us&max=7&apikey=" +
-              GNewsAPIKey
+            "bookmarks"
           )
         }
       >

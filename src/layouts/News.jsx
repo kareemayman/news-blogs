@@ -9,6 +9,13 @@ export default function News() {
   const { newsEndpoint } = useContext(NewsContext)
   const { data, loading, error } = useFetch(newsEndpoint)
 
+  if (newsEndpoint === 'bookmarks') {
+    return (
+      <>
+      </>
+    )
+  }
+
   return (
     <>
       <div className="news-highlight">
