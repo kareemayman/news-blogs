@@ -108,7 +108,7 @@
       gap: 20px;
       flex-direction: column;
 
-      @media (min-width: 769px) and (max-width: 1300px) {
+      @media (min-width: 769px) and (max-width: 1400px) {
         flex-direction: row;
         flex-basis: 100% !important;
       }
@@ -177,7 +177,7 @@
           //   bottom: 6px;
           //   border-radius: 30px;
 
-          //   @media (max-width: 1300px) {
+          //   @media (max-width: 1400px) {
           //     left: 5px;
           //   }
           // }
@@ -194,7 +194,7 @@
           // &.category--active::before {
           //   width: 20%;
 
-          //   @media (max-width: 1300px) {
+          //   @media (max-width: 1400px) {
           //     width: calc(100% - 10px);
           //     bottom: 5px;
           //   }
@@ -224,7 +224,7 @@
             text-shadow: 0 0 5px var(--off-white);
           }
 
-          @media (max-width: 1300px) {
+          @media (max-width: 1400px) {
             display: inline-block;
             padding: 5px;
 
@@ -238,7 +238,7 @@
           }
         }
 
-        @media (max-width: 1300px) {
+        @media (max-width: 1400px) {
           text-align: center;
         }
       }
@@ -416,7 +416,7 @@
         }
       }
 
-      @media (max-width: 1300px) {
+      @media (max-width: 1400px) {
         width: calc(100% - 30px);
         min-height: 900px;
       }
@@ -542,7 +542,7 @@
         }
       }
 
-      @media (max-width: 1300px) {
+      @media (max-width: 1400px) {
         width: calc(100% - 30px);
       }
     }
@@ -625,16 +625,20 @@
             }
           }
         }
+
+        @media (max-width: 1600px) {
+          padding: 40px 20px;
+        }
       }
     }
 
     footer {
-      @media (min-width: 1300px) {
+      @media (min-width: 1400px) {
         display: none;
       }
     }
 
-    @media (max-width: 1300px) {
+    @media (max-width: 1400px) {
       flex-direction: column;
       overflow-y: scroll;
       height: calc(95dvh - 79px);
@@ -684,7 +688,7 @@
     }
   }
 
-  @media (max-width: 1300px) {
+  @media (max-width: 1400px) {
     & > footer {
       display: none;
     }
