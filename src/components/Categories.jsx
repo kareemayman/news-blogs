@@ -163,18 +163,8 @@ export default function Categories() {
         nation
       </span>
       <span
-        // className={
-        //   newsEndpoint ===
-        //   "https://gnews.io/api/v4/top-headlines?category=general&lang=en&country=us&max=7&apikey=" +
-        //     GNewsAPIKey
-        //     ? "category--active"
-        //     : ""
-        // }
-        onClick={() =>
-          setNewsEndpoint(
-            "bookmarks"
-          )
-        }
+        className={newsEndpoint === "bookmarks" ? "category--active" : ""}
+        onClick={() => setNewsEndpoint("bookmarks")}
       >
         bookmarks
         <i className="fa-solid fa-bookmark"></i>
