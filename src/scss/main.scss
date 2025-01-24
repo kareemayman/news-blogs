@@ -615,6 +615,14 @@
           flex-direction: column;
           gap: 20px;
           align-items: center;
+
+          i {
+            font-size: 3rem;
+
+            &.bxs-sun {
+              color: rgb(228, 202, 116);
+            }
+          }
         }
       }
     }

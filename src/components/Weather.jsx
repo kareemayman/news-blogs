@@ -29,7 +29,7 @@ export default function Weather() {
       </form>
 
       <div className="weather__info">
-        <h3>Sunny</h3>
+        <i className='bx bxs-sun' ></i>
         <h3 className="comfortaa">Clear</h3>
         <h3 className="comfortaa">30&deg;</h3>
       </div>
