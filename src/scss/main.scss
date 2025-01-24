@@ -613,14 +613,15 @@
           text-align: center;
           display: flex;
           flex-direction: column;
-          gap: 20px;
+          gap: 25px;
           align-items: center;
 
           i {
             font-size: 3rem;
 
-            &.bxs-sun {
-              color: rgb(228, 202, 116);
+            &.bxs-sun,
+            &.bxs-moon {
+              color: #ffc87c;
             }
           }
         }
