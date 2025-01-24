@@ -5,6 +5,8 @@ import Categories from "../components/Categories"
 import News from "./News"
 import MyBlogs from "./MyBlogs"
 import Footer from "./Footer"
+import Weather from "../components/Weather"
+import Calender from "../components/Calender"
 
 export default function Main() {
   return (
@@ -20,11 +22,11 @@ export default function Main() {
 
       <MyBlogs></MyBlogs>
 
-      <div className="flex">
-        <div></div>
-        <div></div>
+      <div className="flex flex-weather-calender">
+        <Weather></Weather>
+        <Calender></Calender>
       </div>
-      
+
       <Footer></Footer>
     </main>
   )

@@ -40,7 +40,7 @@ function Card({ img, title, bookmark, articleData, blog, cardBookmarked }) {
         localStorage.setItem("bookmarkedArticles", JSON.stringify(localData))
       } else {
         const newBookmarks = localData.filter((art) => {
-          return art.title != articleData.title
+          return art.url != articleData.url
         })
 
         localStorage.setItem("bookmarkedArticles", JSON.stringify(newBookmarks))
