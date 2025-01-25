@@ -47,7 +47,7 @@ export default function Weather() {
         {loading ? (
           "Fetching Weather Information From API..."
         ) : error ? (
-          "Error Fetching Weather Information From API..."
+          <h2 className="comfortaa">Not Found 😞</h2>
         ) : (
           <>
             {data.weather[0].main === "Clear" &&
