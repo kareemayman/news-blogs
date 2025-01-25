@@ -658,6 +658,7 @@
           align-items: center;
           flex-direction: row;
           gap: initial;
+          flex-basis: initial !important;
 
           h2.month-year {
             font-size: 1.1rem;
