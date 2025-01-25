@@ -720,6 +720,7 @@
             width: 30px;
             text-align: center;
             font-size: 0.9rem;
+            @include flex-center;
 
             &.current-day {
               position: relative;
@@ -730,11 +731,11 @@
               &::before {
                 content: "";
                 position: absolute;
-                width: 120%;
+                width: 40px;
                 aspect-ratio: 1;
                 left: 50%;
                 top: 50%;
-                translate: -50% -64%;
+                translate: -50% -50%;
                 background-image: linear-gradient(
                 to right,
                 var(--light-purple),
@@ -742,6 +743,10 @@
                 );
                 border-radius: 50%;
                 z-index: -1;
+
+                @media (max-width: 1400px) {
+                  width: 30px;
+                }
               }
             }
           }
