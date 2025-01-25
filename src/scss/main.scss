@@ -646,6 +646,110 @@
           padding: 40px 20px;
         }
       }
+
+      .calender {
+        padding: 20px;
+
+        &>.flex {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          flex-direction: row;
+          gap: initial;
+          margin-bottom: 20px;
+
+          h2.month-year {
+            font-size: 1.1rem;
+            letter-spacing: 0;
+            font-weight: 900;
+            color: var(--gray);
+          }
+
+          .change-month {
+            padding: 0;
+            display: flex;
+            gap: 8px;
+
+            button {
+              background-color: #2d3342;
+              border: none;
+              outline: 0;
+              border-radius: 50%;
+              @include flex-center;
+              color: var(--light-purple);
+              width: 30px;
+              aspect-ratio: 1;
+              cursor: pointer;
+              transition: var(--main-trans);
+
+              i {
+                transform: translateY(1px);
+              }
+
+              &:hover {
+                background-color: #1f222c;
+              }
+            }
+          }
+        }
+
+        .days {
+          margin: 20px 0;
+          display: flex;
+          gap: 10px;
+          justify-content: space-between;
+
+          span {
+            color: #4f4e59;
+            font-weight: 600;
+            font-size: 0.9rem;
+            width: 30px;
+          }
+        }
+
+        .dates {
+          display: grid;
+          grid-template-columns: repeat(7, auto);
+          gap: 10px;
+          justify-content: space-between;
+          text-align: center;
+
+          span {
+            width: 30px;
+            aspect-ratio: 1;
+            text-align: center;
+            font-size: 0.9rem;
+
+            &.current-day {
+              position: relative;
+              font-size: 1rem;
+              color: white;
+              z-index: 2;
+              
+              &::before {
+                content: "";
+                position: absolute;
+                width: 120%;
+                aspect-ratio: 1;
+                left: 50%;
+                top: 50%;
+                translate: -50% -56%;
+                background-image: linear-gradient(
+                to right,
+                var(--light-purple),
+                var(--dark-purple)
+                );
+                border-radius: 50%;
+                z-index: -1;
+              }
+            }
+          }
+        }
+
+        @media (max-width: 769px) {
+          padding: 20px 15px;
+        }
+      }
     }
 
     footer {
