@@ -649,6 +649,8 @@
 
       .calender {
         padding: 20px;
+        display: flex;
+        flex-direction: column;     
 
         &>.flex {
           display: flex;
@@ -656,7 +658,6 @@
           align-items: center;
           flex-direction: row;
           gap: initial;
-          margin-bottom: 20px;
 
           h2.month-year {
             font-size: 1.1rem;
@@ -713,10 +714,10 @@
           gap: 10px;
           justify-content: space-between;
           text-align: center;
+          flex-grow: 1;
 
           span {
             width: 30px;
-            aspect-ratio: 1;
             text-align: center;
             font-size: 0.9rem;
 
@@ -733,7 +734,7 @@
                 aspect-ratio: 1;
                 left: 50%;
                 top: 50%;
-                translate: -50% -56%;
+                translate: -50% -64%;
                 background-image: linear-gradient(
                 to right,
                 var(--light-purple),
