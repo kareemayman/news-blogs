@@ -61,12 +61,12 @@ export default function Calender() {
 
       <div className="dates">
         {Array.from({ length: firstDay }).map((_, index) => (
-          <span key={index}></span>
+          <span key={`empty-${index}`}></span>
         ))}
 
         {Array.from({ length: lastDay }).map((_, index) => (
           <span
-            key={index}
+            key={`month-day-${index}`}
             className={
               index + 1 === today && month === new Date().getMonth() && year === new Date().getFullYear()
                 ? "current-day"
