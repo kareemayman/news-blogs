@@ -2,6 +2,8 @@ import React, { useState } from "react"
 
 export default function CreateBlog({ CreateBlog, setCreateBlog }) {
   const [showForm, setShowForm] = useState(false)
+  const [title, setTitle] = useState("")
+  const [text, setText] = useState("")
 
   function showFormFunction(e) {
     e.target.style.display = "none"
@@ -38,9 +40,17 @@ export default function CreateBlog({ CreateBlog, setCreateBlog }) {
               className="comfortaa"
               type="text"
               placeholder="Add Title (Max 60 characters)"
+              required
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
             />
 
-            <textarea className="comfortaa" placeholder="Add Text"></textarea>
+            <textarea
+              className="comfortaa"
+              placeholder="Add Text"
+              value={text}
+              onChange={(e) => setText(e.target.value)}
+            ></textarea>
 
             <button type="submit" className="comfortaa">
               SUBMIT POST
