@@ -163,7 +163,7 @@
 
           .profile-picture {
             position: absolute;
-            width: 150px;
+            width: 140px;
             aspect-ratio: 1;
             border-radius: 50%;
             border: 2px solid var(--dark-purple);
@@ -177,6 +177,9 @@
             background-repeat: no-repeat;
             background-position: top;
 
+            @media (max-width: 992px) {
+              display: none;
+            }
           }
 
           .wallpaper {
@@ -198,6 +201,10 @@
               background-color: var(--dark-purple);
               opacity: 0.3;
               border-radius: 10px;
+            }
+
+            @media (max-width: 768px) {
+              display: none;
             }
           }
 
@@ -249,6 +256,14 @@
 
               &:hover {
                 color: white;
+              }
+            }
+
+            @media (max-width: 768px) {
+              width: 100%;
+
+              .create-post-button {
+                font-size: 1rem;
               }
             }
           }
