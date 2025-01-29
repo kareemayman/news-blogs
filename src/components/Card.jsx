@@ -90,6 +90,13 @@ function Card({ img, title, bookmark, articleData, blog, cardBookmarked }) {
             </div>
           )}
         </div>
+
+        {blog && (
+          <div className="blog-buttons">
+            <i className="fa-solid fa-pen-to-square"></i>
+            <i className="fa-solid fa-circle-xmark"></i>
+          </div>
+        )}
       </div>
     </>
   )
