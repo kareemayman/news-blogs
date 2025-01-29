@@ -12,6 +12,7 @@
   color: var(--off-white);
   box-shadow: 0 20px 30px rgba(0, 0, 0, 0.5);
   overflow: hidden;
+  position: relative;
 
   header {
     display: flex;
@@ -130,14 +131,126 @@
           img {
             max-width: 100%;
             overflow: hidden;
+            transition: var(--main-trans);
+            cursor: pointer;
           }
         }
 
         p {
           margin-top: 15px;
+          transition: var(--main-trans);
+          cursor: pointer;
+
+          &:hover {
+            color: white;
+            text-shadow: 0 0 5px var(--off-white);
+          }
 
           @media (max-width: 768px) {
             display: none;
+          }
+        }
+
+        .create-blog {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          border-radius: 10px;
+          z-index: 99999;
+          display: flex;
+
+          .profile-picture {
+            position: absolute;
+            width: 150px;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            border: 2px solid var(--dark-purple);
+            overflow: hidden;
+            top: 50%;
+            left: 50%;
+            translate: -50% -50%;
+            z-index: 999999;
+            background-image: url('/src/assets/images/kareem.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: top;
+
+          }
+
+          .wallpaper {
+            width: 50%;
+            height: 100%;
+            border-radius: 0;
+            background-image: url("/src/assets/images/bg.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            position: relative;
+            z-index: 1;
+
+            &::before {
+              content: "";
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              background-color: var(--dark-purple);
+              opacity: 0.3;
+              border-radius: 10px;
+            }
+          }
+
+          .create-blog__form {
+            width: 50%;
+            height: 100%;
+            background-color: var(--black);
+            border-radius: 0;
+            @include flex-center;
+            position: relative;
+
+            .create-post-button {
+              padding: 20px 40px;
+              color: white;
+              background-image: linear-gradient(
+                to right,
+                var(--light-purple),
+                var(--dark-purple)
+              );
+              border-radius: 50px;
+              cursor: pointer;
+              transition: var(--main-trans);
+              border: none;
+              outline: 0;
+              font-size: 1.3rem;
+              font-weight: 900;
+              letter-spacing: -1px;
+
+              &:hover {
+                box-shadow: 0 0 12px 3px rgba(255, 255, 255, 0.253);
+              }
+            }
+
+            .back-button {
+              position: absolute;
+              top: 20px;
+              right: 20px;
+              cursor: pointer;
+              color: var(--off-white);
+              font-size: 1.5rem;
+              transition: var(--main-trans);
+              display: flex;
+              gap: 5px;
+              align-items: center;
+
+              i {
+                font-size: 1.3rem;
+              }
+
+              &:hover {
+                color: white;
+              }
+            }
           }
         }
       }
