@@ -64,22 +64,22 @@ export default function Weather() {
               <i className="bx bxs-cloud-rain"></i>
             )}
             {data.weather[0].main === "Drizzle" && (
-              <i className="bx bxs-cloud-drizzle"></i>
+              <i className="bx bx-cloud-drizzle"></i>
             )}
             {data.weather[0].main === "Thunderstorm" && (
               <i className="bx bxs-cloud-lightning"></i>
             )}
             {data.weather[0].main === "Snow" && (
-              <i className="bx bxs-cloud-snow"></i>
+              <i className="bx bx-cloud-snow"></i>
             )}
             {data.weather[0].main === "Mist" && (
-              <i className="bx bxs-cloud-fog"></i>
+              <i className="bx bx-cloud"></i>
             )}
             {data.weather[0].main === "Haze" && (
-              <i className="bx bxs-cloud-haze"></i>
+              <i className="bx bx-cloud"></i>
             )}
             {data.weather[0].main === "Fog" && (
-              <i className="bx bxs-cloud-fog2"></i>
+              <i className="bx bx-cloud"></i>
             )}
             {data.weather[0].main === "Smoke" && (
               <i className="bx bxs-cloud-smoke"></i>
@@ -94,7 +94,7 @@ export default function Weather() {
               <i className="bx bxs-cloud-hail"></i>
             )}
             {data.weather[0].main === "Squall" && (
-              <i className="bx bxs-cloud-wind"></i>
+              <i className="bx bx-wind"></i>
             )}
             {data.weather[0].main === "Tornado" && (
               <i className="bx bxs-tornado"></i>
