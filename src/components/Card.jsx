@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react"
 import NewsModal from "./NewsModal"
 
-function Card({ img, title, bookmark, articleData, blog, cardBookmarked }) {
+function Card({ img, title, bookmark, articleData, blog, cardBookmarked, description }) {
   const imgRef = useRef(null)
   const [cardModalVisible, changeCardModalVisible] = useState(false)
   const [cardBookmarkedState, setCardBookmarkedState] = useState(cardBookmarked)
@@ -59,6 +59,7 @@ function Card({ img, title, bookmark, articleData, blog, cardBookmarked }) {
             cardModalVisible={cardModalVisible}
             changeCardModalVisible={changeCardModalVisible}
             isBlog={blog}
+            description={description}
           ></NewsModal>
         )}
       <div

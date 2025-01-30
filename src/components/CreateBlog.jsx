@@ -1,13 +1,41 @@
-import React, { useState } from "react"
+import React, { useContext, useState } from "react"
+import { NewsContext } from "../context/NewsContext"
+
+import blog3 from "../assets/images/blog3.jpg"
 
 export default function CreateBlog({ CreateBlog, setCreateBlog }) {
   const [showForm, setShowForm] = useState(false)
   const [title, setTitle] = useState("")
   const [text, setText] = useState("")
+  const [showFormSubmitted, setShowFormSubmitted] = useState(false)
+  const {renderBlogs, setRenderBlogs} = useContext(NewsContext)
 
   function showFormFunction(e) {
     e.target.style.display = "none"
     setShowForm(true)
+  }
+
+  function handleFormSubmit(e) {
+    e.preventDefault()
+    const newPost = {
+      title: title,
+      description: text,
+    }
+
+    let localData = localStorage.getItem("blogs")
+    if (localData) {
+      localData = JSON.parse(localData)
+      localData.push(newPost)
+      localStorage.setItem("blogs", JSON.stringify(localData))
+    } else {
+      localStorage.setItem("blogs", JSON.stringify([newPost]))
+    }
+
+    setTitle("")
+    setText("")
+    setShowForm(false)
+    setShowFormSubmitted(true)
+    setRenderBlogs(true)
   }
 
   return (
@@ -27,13 +55,13 @@ export default function CreateBlog({ CreateBlog, setCreateBlog }) {
         </button>
 
         {showForm && (
-          <form>
-            <h1 className="comfortaa">NEW POST</h1>
+          <form onSubmit={handleFormSubmit}>
+            <h1 className="comfortaa gradient-header">NEW POST</h1>
 
             <label htmlFor="imageUpload">
               <i className="fa-solid fa-arrow-up-from-bracket"></i>
               Upload Image
-              <input type="file" id="imageUpload" accept="image/*" required/>
+              <input type="file" id="imageUpload" accept="image/*"/>
             </label>
 
             <input
@@ -56,6 +84,10 @@ export default function CreateBlog({ CreateBlog, setCreateBlog }) {
               SUBMIT POST
             </button>
           </form>
+        )}
+
+        {showFormSubmitted && (
+            <h1 className="comfortaa gradient-header form-submitted">POST SUBMITTED!</h1>
         )}
       </div>
 

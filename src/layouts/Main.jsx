@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useContext } from "react"
 import BlogProfile from "../components/BlogProfile"
 import kareem from "../assets/images/kareem.jpg"
 import Categories from "../components/Categories"
@@ -7,8 +7,11 @@ import MyBlogs from "./MyBlogs"
 import Footer from "./Footer"
 import Weather from "../components/Weather"
 import Calender from "../components/Calender"
+import { NewsContext } from "../context/NewsContext"
 
 export default function Main() {
+  const {renderBlogs, setRenderBlogs} = useContext(NewsContext)
+
   return (
     <main>
       <div className="flex flex-nav">
@@ -20,7 +23,7 @@ export default function Main() {
         <News></News>
       </div>
 
-      <MyBlogs></MyBlogs>
+      {renderBlogs && <MyBlogs></MyBlogs>}
 
       <div className="flex flex-weather-calender">
         <Weather></Weather>
