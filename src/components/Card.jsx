@@ -6,10 +6,6 @@ function Card({ img, title, bookmark, articleData, blog, cardBookmarked, descrip
   const [cardModalVisible, changeCardModalVisible] = useState(false)
   const [cardBookmarkedState, setCardBookmarkedState] = useState(cardBookmarked)
 
-  useEffect(() => {
-    imgRef.current.style.backgroundImage = `url(${img})`
-  }, [img])
-
   // useEffect For showing, hiding overlay
   useEffect(() => {
     if (
@@ -71,7 +67,7 @@ function Card({ img, title, bookmark, articleData, blog, cardBookmarked, descrip
         }}
       >
         <div className="img" ref={imgRef}>
-          {/* <img src={img} alt="highlight-img" /> */}
+          <img src={img} alt="highlight-img" />
         </div>
 
         <div className="title">

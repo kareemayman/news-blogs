@@ -35,7 +35,9 @@ export default function NewsModal({
   return (
     <div className="news-modal-box">
       <div className="img">
-        <img src={img} alt="article image" />
+        <div className="img-wrapper">
+          <img src={img} alt="article image" />
+        </div>
       </div>
 
       <h3>{title}</h3>

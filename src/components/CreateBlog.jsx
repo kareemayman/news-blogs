@@ -1,12 +1,11 @@
 import React, { useContext, useState } from "react"
 import { NewsContext } from "../context/NewsContext"
 
-import blog3 from "../assets/images/blog3.jpg"
-
 export default function CreateBlog({ CreateBlog, setCreateBlog }) {
   const [showForm, setShowForm] = useState(false)
   const [title, setTitle] = useState("")
   const [text, setText] = useState("")
+  const [image, setImage] = useState(null)
   const [showFormSubmitted, setShowFormSubmitted] = useState(false)
   const {renderBlogs, setRenderBlogs} = useContext(NewsContext)
 
@@ -20,6 +19,7 @@ export default function CreateBlog({ CreateBlog, setCreateBlog }) {
     const newPost = {
       title: title,
       description: text,
+      img: image,
     }
 
     let localData = localStorage.getItem("blogs")
@@ -33,9 +33,27 @@ export default function CreateBlog({ CreateBlog, setCreateBlog }) {
 
     setTitle("")
     setText("")
+    setImage(null)
     setShowForm(false)
     setShowFormSubmitted(true)
+  }
+
+  function handleBackButtonClick() {
+    setCreateBlog(false)
     setRenderBlogs(true)
+  }
+
+  function handleImageUpload(e) {
+    if (e.target.files.length) {
+      const file = e.target.files[0]
+      const reader = new FileReader()
+  
+      reader.onloadend = () => {
+        setImage(reader.result)
+      }
+  
+      reader.readAsDataURL(file)
+    }
   }
 
   return (
@@ -43,7 +61,7 @@ export default function CreateBlog({ CreateBlog, setCreateBlog }) {
       <div className="wallpaper"></div>
 
       <div className="create-blog__form">
-        <h2 className="back-button" onClick={() => setCreateBlog(false)}>
+        <h2 className="back-button" onClick={handleBackButtonClick}>
           BACK <i className="fa-solid fa-angle-right"></i>
         </h2>
 
@@ -61,7 +79,7 @@ export default function CreateBlog({ CreateBlog, setCreateBlog }) {
             <label htmlFor="imageUpload">
               <i className="fa-solid fa-arrow-up-from-bracket"></i>
               Upload Image
-              <input type="file" id="imageUpload" accept="image/*"/>
+              <input type="file" id="imageUpload" accept="image/*" onChange={handleImageUpload}/>
             </label>
 
             <input
