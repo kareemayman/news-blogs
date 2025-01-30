@@ -748,6 +748,15 @@
       @media (max-width: 1400px) {
         width: calc(100% - 30px);
       }
+      
+      @media (min-width: 1401px) {
+        overflow: scroll;
+        scrollbar-width: none; /* For Firefox */
+        -ms-overflow-style: none; /* For IE and Edge */
+        &::-webkit-scrollbar {
+          display: none;
+        }
+      }
     }
 
     .news-modal-box {
