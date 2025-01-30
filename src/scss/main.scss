@@ -236,6 +236,10 @@
               &:hover {
                 box-shadow: 0 0 12px 3px rgba(255, 255, 255, 0.253);
               }
+
+              &:active {
+                transform: scale(0.95);
+              }
             }
 
             .back-button {
@@ -384,6 +388,10 @@
 
                 &:hover {
                   box-shadow: 0 0 12px 3px rgba(255, 255, 255, 0.253);
+                }
+
+                &:active {
+                  transform: scale(0.95);
                 }
               }
 
@@ -1010,6 +1018,10 @@
 
               &:hover {
                 background-color: #1f222c;
+              }
+
+              &:active {
+                transform: scale(0.7);
               }
             }
           }

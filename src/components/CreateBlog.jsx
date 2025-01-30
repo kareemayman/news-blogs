@@ -33,7 +33,7 @@ export default function CreateBlog({ CreateBlog, setCreateBlog }) {
             <label htmlFor="imageUpload">
               <i className="fa-solid fa-arrow-up-from-bracket"></i>
               Upload Image
-              <input type="file" id="imageUpload" accept="image/*" />
+              <input type="file" id="imageUpload" accept="image/*" required/>
             </label>
 
             <input
