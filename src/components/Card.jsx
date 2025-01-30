@@ -58,13 +58,14 @@ function Card({ img, title, bookmark, articleData, blog, cardBookmarked }) {
             title={title}
             cardModalVisible={cardModalVisible}
             changeCardModalVisible={changeCardModalVisible}
+            isBlog={blog}
           ></NewsModal>
         )}
       <div
         className="card"
         onClick={(e) => {
           if (!e.target.matches(".bookmark-icon i")) {
-            !blog && changeCardModalVisible(!cardModalVisible)
+            changeCardModalVisible(!cardModalVisible)
           }
         }}
       >
