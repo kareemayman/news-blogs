@@ -580,6 +580,7 @@
         background-color: rgb(19, 19, 19);
         display: grid;
         grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(auto-fit, minmax(150px, 1fr));
         gap: 10px;
 
         h2 {

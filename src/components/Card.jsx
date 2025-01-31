@@ -35,7 +35,7 @@ function Card({
     }
   }, [cardModalVisible])
 
-  // Function For Adding or Removing Articles to Bookmarks
+  // Function For Adding or Removing Articles to and from Bookmarks
   function toggleBookmarks() {
     // Remember React Doesn't Update State Until Next Rerender So Reverse If Conditions
     setCardBookmarkedState(!cardBookmarkedState)
