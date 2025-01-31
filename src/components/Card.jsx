@@ -1,10 +1,12 @@
-import React, { useEffect, useRef, useState } from "react"
+import React, { useContext, useEffect, useRef, useState } from "react"
 import NewsModal from "./NewsModal"
+import { NewsContext } from "../context/NewsContext"
 
 function Card({ img, title, bookmark, articleData, blog, cardBookmarked, description }) {
   const imgRef = useRef(null)
   const [cardModalVisible, changeCardModalVisible] = useState(false)
   const [cardBookmarkedState, setCardBookmarkedState] = useState(cardBookmarked)
+  const {renderBlogs, setRenderBlogs} = useContext(NewsContext)
 
   // useEffect For showing, hiding overlay
   useEffect(() => {
@@ -44,6 +46,20 @@ function Card({ img, title, bookmark, articleData, blog, cardBookmarked, descrip
     }
   }
 
+  // Function For Deleting Blogs
+  function deleteBlog() {
+    const localData = JSON.parse(localStorage.getItem("blogs")) || null
+    const newBlogs = localData.filter((blog) => {
+      return blog.title != title
+    })
+
+    localStorage.setItem("blogs", JSON.stringify(newBlogs))
+    setRenderBlogs(false)
+    setTimeout(() => {
+      setRenderBlogs(true)
+    }, 0)
+  }
+
   return (
     <>
       {cardModalVisible &&
@@ -61,7 +77,7 @@ function Card({ img, title, bookmark, articleData, blog, cardBookmarked, descrip
       <div
         className="card"
         onClick={(e) => {
-          if (!e.target.matches(".bookmark-icon i")) {
+          if (!e.target.matches(".bookmark-icon i") && !e.target.matches(".blog-buttons i")) {
             changeCardModalVisible(!cardModalVisible)
           }
         }}
@@ -92,7 +108,7 @@ function Card({ img, title, bookmark, articleData, blog, cardBookmarked, descrip
         {blog && (
           <div className="blog-buttons">
             <i className="fa-solid fa-pen-to-square"></i>
-            <i className="fa-solid fa-circle-xmark"></i>
+            <i className="fa-solid fa-circle-xmark" onClick={deleteBlog}></i>
           </div>
         )}
       </div>
