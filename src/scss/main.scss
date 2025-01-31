@@ -575,7 +575,12 @@
       }
 
       .news-grid {
-        overflow: hidden;
+        overflow: scroll;
+        scrollbar-width: none; /* For Firefox */
+        -ms-overflow-style: none; /* For IE and Edge */
+        &::-webkit-scrollbar {
+          display: none;
+        }
         padding: 10px;
         background-color: rgb(19, 19, 19);
         display: grid;
