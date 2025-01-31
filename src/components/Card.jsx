@@ -2,11 +2,26 @@ import React, { useContext, useEffect, useRef, useState } from "react"
 import NewsModal from "./NewsModal"
 import { NewsContext } from "../context/NewsContext"
 
-function Card({ img, title, bookmark, articleData, blog, cardBookmarked, description }) {
+function Card({
+  img,
+  title,
+  bookmark,
+  articleData,
+  blog,
+  cardBookmarked,
+  description,
+}) {
   const imgRef = useRef(null)
   const [cardModalVisible, changeCardModalVisible] = useState(false)
   const [cardBookmarkedState, setCardBookmarkedState] = useState(cardBookmarked)
-  const {renderBlogs, setRenderBlogs} = useContext(NewsContext)
+  const {
+    renderBlogs,
+    setRenderBlogs,
+    createBlog,
+    setCreateBlog,
+    editingBlog,
+    setEditingBlog,
+  } = useContext(NewsContext)
 
   // useEffect For showing, hiding overlay
   useEffect(() => {
@@ -60,6 +75,13 @@ function Card({ img, title, bookmark, articleData, blog, cardBookmarked, descrip
     }, 0)
   }
 
+  // Function For Editing Blogs
+  function editBlog() {
+    setCreateBlog(true)
+    setRenderBlogs(false)
+    setEditingBlog([title, description, img])
+  }
+
   return (
     <>
       {cardModalVisible &&
@@ -77,7 +99,10 @@ function Card({ img, title, bookmark, articleData, blog, cardBookmarked, descrip
       <div
         className="card"
         onClick={(e) => {
-          if (!e.target.matches(".bookmark-icon i") && !e.target.matches(".blog-buttons i")) {
+          if (
+            !e.target.matches(".bookmark-icon i") &&
+            !e.target.matches(".blog-buttons i")
+          ) {
             changeCardModalVisible(!cardModalVisible)
           }
         }}
@@ -107,7 +132,7 @@ function Card({ img, title, bookmark, articleData, blog, cardBookmarked, descrip
 
         {blog && (
           <div className="blog-buttons">
-            <i className="fa-solid fa-pen-to-square"></i>
+            <i className="fa-solid fa-pen-to-square" onClick={editBlog}></i>
             <i className="fa-solid fa-circle-xmark" onClick={deleteBlog}></i>
           </div>
         )}

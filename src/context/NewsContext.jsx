@@ -10,9 +10,22 @@ export const NewsContext = createContext()
 export const NewsProvider = ({ children }) => {
   const [newsEndpoint, setNewsEndpoint] = useState(GNewsEndpoint)
   const [renderBlogs, setRenderBlogs] = useState(true)
+  const [createBlog, setCreateBlog] = useState(false)
+  const [editingBlog, setEditingBlog] = useState(false)
 
   return (
-    <NewsContext.Provider value={{ newsEndpoint, setNewsEndpoint, renderBlogs, setRenderBlogs }}>
+    <NewsContext.Provider
+      value={{
+        newsEndpoint,
+        setNewsEndpoint,
+        renderBlogs,
+        setRenderBlogs,
+        createBlog,
+        setCreateBlog,
+        editingBlog,
+        setEditingBlog,
+      }}
+    >
       {children}
     </NewsContext.Provider>
   )

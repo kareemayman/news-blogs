@@ -3,10 +3,11 @@ import CreateBlog from './CreateBlog'
 import { NewsContext } from '../context/NewsContext'
 
 export default function BlogProfile({ img, user }) {
-  const [createBlog, setCreateBlog] = useState(false)
-  const {renderBlogs, setRenderBlogs} = useContext(NewsContext)
+  // const [createBlog, setCreateBlog] = useState(false)
+  const {renderBlogs, setRenderBlogs, createBlog, setCreateBlog, editingBlog, setEditingBlog} = useContext(NewsContext)
 
   function handleProfileClick() {
+    setEditingBlog(false)
     setCreateBlog(true)
     setRenderBlogs(false)
   }
